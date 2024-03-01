@@ -1,0 +1,127 @@
+[
+  {
+    "name": "Product Discussion",
+    "id": "6121e28f6b1bec0690ff20f3",
+    "slug": "Product-Discussion"
+  },
+  {
+    "name": "Feature Requests",
+    "id": "6121e28f6b1bec0690ff20f8",
+    "slug": "Feature-Requests"
+  },
+  {
+    "name": "Everything Else",
+    "id": "6121e28f6b1bec0690ff20f9",
+    "slug": "Everything-Else"
+  },
+  {
+    "name": "Other Products",
+    "id": "6121e28f6b1bec0690ff20fa",
+    "slug": "Other-Products"
+  },
+  {
+    "name": "Announcements",
+    "id": "6121e28f6b1bec0690ff2106",
+    "slug": "Announcements"
+  },
+  {
+    "name": "Peplink Balance",
+    "id": "6121e28f6b1bec0690ff210b",
+    "slug": "Peplink-Balance"
+  },
+  {
+    "name": "Pepwave MAX",
+    "id": "6121e28f6b1bec0690ff210c",
+    "slug": "Pepwave-MAX"
+  },
+  {
+    "name": "Pepwave AP & Surf",
+    "id": "6121e28f6b1bec0690ff210d",
+    "slug": "Pepwave-AP-and-Surf"
+  },
+  {
+    "name": "Case Studies and Praises",
+    "id": "6121e28f6b1bec0690ff2111",
+    "slug": "Case-Studies-and-Praises"
+  },
+  {
+    "name": "Design Lab",
+    "id": "6121e28f6b1bec0690ff2117",
+    "slug": "Design-Lab"
+  },
+  {
+    "name": "Beta Releases",
+    "id": "6121e28f6b1bec0690ff2118",
+    "slug": "Beta-Releases"
+  },
+  {
+    "name": "Tips and Tricks",
+    "id": "6121e28f6b1bec0690ff212b",
+    "slug": "Tips-and-Tricks"
+  },
+  {
+    "name": "FAQs",
+    "id": "6121e28f6b1bec0690ff212c",
+    "slug": "FAQs"
+  },
+  {
+    "name": "Knowledgebase",
+    "id": "6121e28f6b1bec0690ff2132",
+    "slug": "Knowledgebase"
+  },
+  {
+    "name": "Specialized Market",
+    "id": "6121e28f6b1bec0690ff2152",
+    "slug": "Specialized-Market"
+  },
+  {
+    "name": "Maritime",
+    "id": "6121e28f6b1bec0690ff2155",
+    "slug": "Maritime"
+  },
+  {
+    "name": "Ask Tim",
+    "id": "6121e28f6b1bec0690ff2160",
+    "slug": "Ask-Tim"
+  },
+  {
+    "name": "Wireless Carrier Troubleshooting",
+    "id": "6121e28f6b1bec0690ff2161",
+    "slug": "Wireless-Carrier-Troubleshooting"
+  },
+  {
+    "name": "Peplink Devices Comparison",
+    "id": "6121e28f6b1bec0690ff2162",
+    "slug": "Peplink-Devices-Comparison"
+  },
+  {
+    "name": "SpeedFusion Connect",
+    "id": "6121e28f6b1bec0690ff2164",
+    "slug": "SpeedFusion-Connect"
+  },
+  {
+    "name": "Tell Me Why",
+    "id": "6200d5e3fe37bb4dc01eedb6",
+    "slug": "Tell-Me-Why"
+  },
+  {
+    "name": "InControl",
+    "id": "621c8e0c2c6aad83150ee284",
+    "slug": "InControl"
+  },
+  {
+    "name": "FusionHub",
+    "id": "621c8e4acf75d29e4aff4df2",
+    "slug": "FusionHub"
+  },
+  {
+    "name": "Starlink",
+    "id": "6351ea1d20f25871bdf58e7a",
+    "slug": "Starlink"
+  },
+  {
+    "name": "Peplink Security Advisories",
+    "id": "657296492cafaa735b4a8c8c",
+    "slug": "Peplink-Security-Advisories"
+  }
+]

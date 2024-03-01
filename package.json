@@ -1,0 +1,39 @@
+{
+  "name": "web-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "eslintConfig": {
+    "env": {
+      "es2021": true,
+      "node": true,
+      "jest": true
+    },
+    "globals": {
+      "fetch": true,
+      "fs": true,
+      "test": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": "off",
+      "no-unused-vars": "warn"
+    }
+  },
+  "prettier": {
+    "singleQuote": false,
+    "semi": false,
+    "printWidth": 95,
+    "arrowParens": "avoid"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
