@@ -1,21 +1,31 @@
 const categories = require("./data/categories.json")
-const { pause } = require("../util")
+const { pause } = require("./util")
 const fs = require("fs")
+const {keyBy} = require('lodash/collection')
 
-const prepTopicData = topic => {
+const processTopic = topic => {
   try {
     const {
-      _id: id,
+      _id,
       tags,
       title,
       search_product,
       category: { name: categoryName, _id: categoryId },
-      creator: { primaryGroup, roles, suspended_till, deleted, avatar, _id: creatorId, ...creator },
-      views,
+      creator: {
+        primaryGroup,
+        roles,
+        suspended_till,
+        deleted,
+        avatar,
+        _id: creatorId,
+        ...creator
+      },
+      slug,
       createdAt,
       lastModified,
       pinnedLocally,
       pinnedGlobally,
+      views: numberOfViews,
       noFlags: numberOfFlags,
       noLikes: numberOfLikes,
       noBookmarks: numberOfBookmarks,
@@ -23,9 +33,10 @@ const prepTopicData = topic => {
     } = topic
 
     return {
-      id,
+      _id,
       tags,
       title,
+      slug,
       product: search_product?.product,
       categoryName,
       categoryId,
@@ -33,11 +44,11 @@ const prepTopicData = topic => {
         ...creator,
         id: creatorId,
       },
-      views,
       createdAt,
       lastModified,
       pinnedLocally,
       pinnedGlobally,
+      numberOfViews,
       numberOfFlags,
       numberOfLikes,
       numberOfBookmarks,
@@ -52,6 +63,18 @@ const prepTopicData = topic => {
       error,
     }
   }
+}
+
+const filterProcessTopics = topics => {
+  return topics.reduce(
+    (acc, { unlisted, hidden, deleted, flagged, creator: { suspended_till }, ...post }) => {
+      if (unlisted || hidden || deleted || flagged || suspended_till) {
+        return acc
+      }
+      return [...acc, processTopic(post)]
+    },
+    []
+  )
 }
 
 const fetchCategory = async (id, page = 1) => {
@@ -77,9 +100,9 @@ async function main() {
   const topics = []
   for (const cat of categories) {
     const categoryTopics = await fetchCategory(cat.id)
-    topics.push(categoryTopics.map(prepTopicData))
+    topics.push(categoryTopics.map(filterProcessTopics))
   }
-  return topics.flatMap(x => x)
+  return keyBy(topics.flatMap(x => x), 'id')
 }
 
 main().then(res => fs.writeFileSync("data/topics.json", JSON.stringify(res, null, 2)))

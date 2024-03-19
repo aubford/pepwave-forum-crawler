@@ -1,5 +1,5 @@
 {
-  "name": "web-scraper",
+  "name": "ai-web-scraper",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -34,6 +34,7 @@
     "arrowParens": "avoid"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "mongodb": "^6.5.0"
   }
 }
