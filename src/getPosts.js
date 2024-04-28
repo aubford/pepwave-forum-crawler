@@ -34,19 +34,15 @@ const fetchPostsForTopic = async ({ id }) => {
 
 async function fetchPosts(topicsCollection) {
   // matches null or nonexistent
-  const topicsCursor = topicsCollection.find({ topicTextContent: null })
+  const topicsCursor = topicsCollection.find({ topicTextContent: null }, { noCursorTimeout: true })
 
   for await (const topic of topicsCursor) {
-    if (topic.id === "65d9eb7fd362e71c2a51368d") {
-      throw new Error("BADD!!!!!")
-    }
-    
     try {
       await fetchPostsForTopic(topic)
-      await pause(count % 50 === 0 ? 3500 : 1100)
+      await pause(count % 49 === 0 ? 30 * 1000 : 1100)
     } catch (err) {
       console.error(err)
-      console.error("Failed for topic: ", JSON.stringify(topic))
+      console.error("Failed for topic: ", topic)
       await pause(90 * 1000)
       await fetchPostsForTopic(topic).catch(err => {
         console.error("Failed second time for topic: ", topic)
@@ -54,6 +50,8 @@ async function fetchPosts(topicsCollection) {
       })
     }
   }
+  
+  await topicsCursor.close()
 }
 
 async function main() {
