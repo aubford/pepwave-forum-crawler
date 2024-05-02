@@ -1,13 +1,12 @@
 import "dotenv/config"
 import { MongoClient } from "mongodb"
 
-const { DB_URL, DB_NAME } = process.env
-
 export const runMongoSession = async sessionProcedure => {
-  const client = new MongoClient(DB_URL)
+  console.log(process.env.DB_URL, process.env.DB_NAME)
+  const client = new MongoClient(process.env.DB_URL)
   try {
     await client.connect()
-    const db = client.db(DB_NAME)
+    const db = client.db(process.env.DB_NAME)
     await sessionProcedure(db)
   } catch (err) {
     console.error("Error: ", err)

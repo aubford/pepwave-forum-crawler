@@ -4,7 +4,7 @@ import { size } from "lodash-es"
 import { runMongoSession } from "../mongo.js"
 import fs from "fs"
 
-const categories = fs.readFileSync("categories.json")
+const categories = fs.readFileSync("src/web-crawler/categories.json")
 
 const processTopic = topic => {
   try {
