@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +18,10 @@
     "globals": {
       "fetch": true,
       "fs": true,
-      "test": true
+      "test": true,
+      "DB_NAME": true,
+      "DB_URL": true,
+      "OPENAI_API_KEY": true
     },
     "extends": [
       "eslint:recommended"
@@ -34,7 +38,8 @@
     "arrowParens": "avoid"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
+    "dotenv": "^16.4.5",
+    "lodash-es": "^4.17.21",
     "mongodb": "^6.5.0"
   }
 }

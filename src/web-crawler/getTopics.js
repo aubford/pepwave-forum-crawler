@@ -1,7 +1,10 @@
-const categories = require("./data/categories.json")
-const { pause } = require("./util")
-const fs = require("fs")
-const {keyBy} = require('lodash/collection')
+import "dotenv/config"
+import { pause } from "../util.js"
+import { size } from "lodash-es"
+import { runMongoSession } from "../mongo.js"
+import fs from "fs"
+
+const categories = fs.readFileSync("categories.json")
 
 const processTopic = topic => {
   try {
@@ -65,19 +68,24 @@ const processTopic = topic => {
   }
 }
 
-const filterProcessTopics = topics => {
+/**
+ * clean data by removing deleted/flagged/ect topics
+ * @param {Array<Object>} topics
+ * @returns {*}
+ */
+const cleanTopics = topics => {
   return topics.reduce(
-    (acc, { unlisted, hidden, deleted, flagged, creator: { suspended_till }, ...post }) => {
+    (acc, { unlisted, hidden, deleted, flagged, creator: { suspended_till }, ...topic }) => {
       if (unlisted || hidden || deleted || flagged || suspended_till) {
         return acc
       }
-      return [...acc, processTopic(post)]
+      return [...acc, processTopic(topic)]
     },
     []
   )
 }
 
-const fetchCategory = async (id, page = 1) => {
+const fetchTopicsForCategory = async (id, page = 1) => {
   const res = await fetch(
     `https://forum.peplink.com/api/v1/post?sort_by=lastModified&order_by=desc&page=${page}&limit=100&category=${id}`
   )
@@ -87,22 +95,36 @@ const fetchCategory = async (id, page = 1) => {
 
   console.log("✅ Fetched page " + page)
 
-  if (next_page) {
+  if (next_page < 3) {
+    // todo
     await pause(500)
-    const res = await fetchCategory(id, next_page)
+    const res = await fetchTopicsForCategory(id, next_page)
     return data.concat(res)
   }
 
   return data
 }
 
-async function main() {
-  const topics = []
-  for (const cat of categories) {
-    const categoryTopics = await fetchCategory(cat.id)
-    topics.push(categoryTopics.map(filterProcessTopics))
-  }
-  return keyBy(topics.flatMap(x => x), 'id')
+const insertTopics = async (db, topics) => {
+  const collection = db.collection("topics")
+
+  const result = await collection.insertMany(topics)
+  console.log(
+    `Inserted ${result.insertedCount} of ${size(topics)} documents into the collection`
+  )
 }
 
-main().then(res => fs.writeFileSync("data/topics.json", JSON.stringify(res, null, 2)))
+async function main(db) {
+  const topics = []
+  for (const category of categories) {
+    const categoryTopics = await fetchTopicsForCategory(category.id)
+    topics.push(categoryTopics.map(cleanTopics))
+  }
+
+  await insertTopics(
+    db,
+    topics.flatMap(x => x)
+  )
+}
+
+runMongoSession(main).then(() => console.log("Done!"))

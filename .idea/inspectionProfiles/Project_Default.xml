@@ -1003,7 +1003,7 @@
     <inspection_tool class="ES6RedundantAwait" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="ES6RedundantNestingInTemplateLiteral" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="ES6ShorthandObjectProperty" enabled="false" level="INFORMATION" enabled_by_default="false" />
-    <inspection_tool class="ES6TopLevelAwaitExpression" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ES6TopLevelAwaitExpression" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="ES6UnusedImports" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="EditorConfigCharClassLetterRedundancy" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="EditorConfigCharClassRedundancy" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -1227,6 +1227,7 @@
     <inspection_tool class="GherkinBrokenTableInspection" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="GherkinMisplacedBackground" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="GherkinScenarioToScenarioOutline" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="GithubFunctionSignatureValidation" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="GjsLint" enabled="false" level="WARNING" enabled_by_default="false">
       <scope name="Inspections" level="WARNING" enabled="false" />
     </inspection_tool>
@@ -1243,6 +1244,7 @@
     <inspection_tool class="GrUnnecessarySemicolon" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="GrUnresolvedAccess" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="GradleKotlinxCoroutinesDeprecation" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="GraphQLDeprecatedSymbols" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="GraphQLDuplicateArgument" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="GraphQLDuplicateDirective" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="GraphQLEmptyType" enabled="true" level="ERROR" enabled_by_default="true" />
@@ -1502,10 +1504,15 @@
     </inspection_tool>
     <inspection_tool class="HtmlUnknownTarget" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="HtmlWrongAttributeValue" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HttpClientInappropriateProtocolUsageInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="HttpClientUnresolvedAuthId" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="HttpClientUnresolvedVariable" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="HttpRequestContentLengthIsIgnored" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestEnvironmentAuthConfigurationValidationInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="HttpRequestPlaceholder" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestRequestSeparatorJsonBodyInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="HttpRequestRequestSeparatorXmlBodyInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="HttpRequestRequestSeparatorYamlBodyInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="HttpRequestWhitespaceInsideRequestTargetPath" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="HttpUrlsUsage" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="I18nForm" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -1967,6 +1974,7 @@
     <inspection_tool class="MalformedSetUpTearDown" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="MalformedXPath" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ManagedBeanClassInspection" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="MandatoryParamsAbsent" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="ManualArrayCopy" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ManualArrayToCollectionCopy" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ManualMinMaxCalculation" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -3259,6 +3267,8 @@
     <inspection_tool class="UnconditionalWait" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UnconstructableTestCase" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UndeclaredTests" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UndefinedAction" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="UndefinedParamsPresent" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UndesirableClassUsage" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UnfinishedStepVerifier" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UnhandledExceptionInJSP" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -3493,6 +3503,7 @@
     <inspection_tool class="XmlInvalidId" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="XmlPathReference" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="XmlUnboundNsPrefix" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="XmlUnresolvedReference" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="XmlUnusedNamespaceDeclaration" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="XmlWrongFileType" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="XmlWrongRootElement" enabled="true" level="ERROR" enabled_by_default="true" />

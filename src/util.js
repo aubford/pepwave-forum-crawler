@@ -1,4 +1,4 @@
-class ReError extends Error {
+export class ReError extends Error {
   /**
    * @param {string} message
    * @param {Error | Object} cause
@@ -19,7 +19,7 @@ class ReError extends Error {
 /**
  * @returns {Promise<string>}
  */
-const fetchText = async (...fetchArgs) => {
+export const fetchText = async (...fetchArgs) => {
   const response = await fetch(/**@type * */ ...fetchArgs)
   return await response.text()
 }
@@ -27,7 +27,7 @@ const fetchText = async (...fetchArgs) => {
 /**
  * @returns {Promise<string>}
  */
-const fetchJson = async (...fetchArgs) => {
+export const fetchJson = async (...fetchArgs) => {
   const response = await fetch(/**@type * */ ...fetchArgs)
   return await response.json().catch(err => {
     console.error("Bad JSON Response: ", JSON.stringify(response))
@@ -36,21 +36,7 @@ const fetchJson = async (...fetchArgs) => {
   })
 }
 
-const pause = async ms => {
+export const pause = async ms => {
   return await new Promise(resolve => setTimeout(resolve, ms))
 }
 
-Promise.stagger = async (asyncFunc, paramArr, ms) => {
-  const staggered = paramArr.map(async (params, idx) => {
-    await pause(idx * ms)
-    const normalized = [].concat(params)
-    return asyncFunc(...normalized)
-  })
-  return await Promise.all(staggered)
-}
-
-module.exports = {
-  fetchText,
-  fetchJson,
-  pause,
-}
