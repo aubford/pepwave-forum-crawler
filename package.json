@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "getTopics": "node ./src/web-crawler/getTopics.js"
+    "getTopics": "node ./src/web-crawler/getTopics.js",
+    "migrate-topics": "node src/migrations/migrateTopics.js"
   },
   "author": "",
   "license": "ISC",
