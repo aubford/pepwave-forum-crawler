@@ -61,8 +61,8 @@ const processTopic = topic => {
     console.warn("❌ Topic error: ", error)
     console.warn("❌ Topic: ", topic)
     return {
+      _id: topic._id,
       title: topic.title,
-      id: topic._id,
       error,
     }
   }
@@ -96,7 +96,6 @@ const fetchTopicsForCategory = async (id, page = 1) => {
   console.log("✅ Fetched page " + page)
 
   if (next_page < 3) {
-    // todo
     await pause(500)
     const res = await fetchTopicsForCategory(id, next_page)
     return data.concat(res)

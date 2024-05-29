@@ -44,5 +44,6 @@
     <orderEntry type="library" name="@types/react-addons-create-fragment" level="application" />
     <orderEntry type="library" name="@types/react-dom" level="application" />
     <orderEntry type="library" name="@types/underscore" level="application" />
+    <orderEntry type="library" name="@types/assert" level="application" />
   </component>
 </module>
