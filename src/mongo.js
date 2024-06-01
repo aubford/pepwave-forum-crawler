@@ -34,7 +34,6 @@ export const runMongoSession = async session => {
   const client = new MongoClient(process.env.DB_URL)
   try {
     await client.connect()
-
     const db = await connectToExistingDb(client, process.env.DB_NAME)
     await session(db)
   } catch (err) {

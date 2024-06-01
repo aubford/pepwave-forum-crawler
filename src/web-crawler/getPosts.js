@@ -1,4 +1,5 @@
-import { fetchJson, pause } from "../util.js"
+import { pause } from "../util.js"
+import { fetchJson } from "./util.js"
 import { processPosts } from "./processPosts.js"
 import { runMongoSession } from "../mongo.js"
 
@@ -54,4 +55,4 @@ async function main(db) {
   await topicsCursor.close()
 }
 
-runMongoSession(main).then(() => console.log("Done!"))
+runMongoSession(main).then(() => console.log("Posts done!"))

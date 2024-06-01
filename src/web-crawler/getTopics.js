@@ -126,4 +126,4 @@ async function main(db) {
   )
 }
 
-runMongoSession(main).then(() => console.log("Done!"))
+runMongoSession(main).then(() => console.log("Topics Done!"))

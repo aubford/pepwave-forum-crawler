@@ -4,9 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "getTopics": "node ./src/web-crawler/getTopics.js",
-    "migrate-topics": "node src/migrations/migrateTopics.js"
+    "crawl": "node ./src/web-crawler/getTopics.js; node ./src/web-crawler/getPosts.js;",
+    "node-env": "./scripts/node-env.sh $INIT_CWD"
   },
   "author": "",
   "license": "ISC",

@@ -1,0 +1,1 @@
+npm run env -- node $1/$2
