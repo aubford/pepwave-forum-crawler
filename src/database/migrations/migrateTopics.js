@@ -1,4 +1,4 @@
-import { collectionForEach, runMongoSession } from "../../mongo.js"
+import { collectionForEach, runMongoSession } from "../mongo.js"
 import { assertTopicsMigrationSuccess, assertCollectionIsEmpty } from "../test/assert.js"
 
 const session = async db => {

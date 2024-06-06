@@ -1,7 +1,7 @@
 import { pause } from "../util.js"
 import { fetchJson } from "./util.js"
 import { processPosts } from "./processPosts.js"
-import { runMongoSession } from "../mongo.js"
+import { runMongoSession } from "../database/mongo.js"
 
 const TOPICS_COLLECTION = "topics"
 const POSTS_COLLECTION = "posts"

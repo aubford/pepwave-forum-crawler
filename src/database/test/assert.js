@@ -1,5 +1,5 @@
 import assert from "node:assert"
-import { collectionForEach } from "../../mongo.js"
+import { collectionForEach } from "../mongo.js"
 
 export const assertTopicsMigrationSuccess = async (newCollection, oldCollection) => {
   assert.equal(

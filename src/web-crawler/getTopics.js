@@ -1,7 +1,7 @@
-import "dotenv/config"
+import "../../config.js"
 import { pause } from "../util.js"
 import { size } from "lodash-es"
-import { runMongoSession } from "../mongo.js"
+import { runMongoSession } from "../database/mongo.js"
 import fs from "fs"
 
 const categories = fs.readFileSync("src/web-crawler/categories.json")

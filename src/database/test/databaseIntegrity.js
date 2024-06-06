@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { runMongoSession } from "../../mongo.js"
+import { runMongoSession } from "../mongo.js"
 import { assertPostsHaveTopics, assertTopicsMigrationSuccess } from "./assert.js"
 
 const session = async db => {

@@ -1,4 +1,4 @@
-import "dotenv/config"
+import "../../config.js"
 import { Db, Collection, MongoClient } from "mongodb"
 
 /**
@@ -57,3 +57,5 @@ export const collectionForEach = async (collection, callback) => {
     await callback(doc)
   }
 }
+
+console.log(process.env.DB_URL)
